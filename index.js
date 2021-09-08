@@ -45,8 +45,8 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(Array){
-  const updatedFlavors = Array.slice();
+function copy(arr){
+  const updatedFlavors = arr.slice();
   return updatedFlavors;
 }    
 
@@ -122,10 +122,11 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, number){
+  return arr[number];
 }
 
+console.log(getFlavorByIndex(originalFlavors, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
@@ -142,9 +143,13 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
-}
+function removeFlavorByName(arr, string){
+  const i = arr.findIndex(flavor => flavor === string);
+  arr.splice(i,1);
+  return arr;
+};
+
+console.log(removeFlavorByName(originalFlavors, 'Rocky Road'));
 
 
 
