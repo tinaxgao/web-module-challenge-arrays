@@ -179,7 +179,7 @@ function filterByWord(arr, string){
   for (let i = 0; i < arr.length; i++){
   if (arr[i] .includes(string)) {selectFlavors.push(arr[i]);}
   }
-  
+
   return selectFlavors;
 }
 
@@ -198,9 +198,24 @@ Use the getAverageWordLength function below to do the following:
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(arr){
+  let subArray = new Array;
+  for (let i = 0; i < arr.length; i++){
+   // split each string by its space, append split words into new array
+    subArray.push(arr[i].split(' '));
+  }
+  
+  let wordLength = 0;
+   for (let z = 0; z < subArray.length; z++){
+   // for each object, count the word length & add together
+     wordLength += subArray[z].length;
+  }
+  
+  return wordLength / arr.length;
+  
 }
+
+console.log(getAverageWordLength(originalFlavors));
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
