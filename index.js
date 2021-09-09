@@ -232,10 +232,10 @@ Use the getRandomFlavors function and new arrays below to do the following:
 
 
 function getRandomFlavors(a, b, c, d) {
-  let allFlavors = a.concat(b, c, d);
+  let allFlavors = a.concat(b, c, d); //combine all inputted arrays into a single one
   let randomFlavors = [];
   
-  for (let i=0; i < 32; i++){
+  for (let i=0; i < 31; i++){
   randomFlavors.push(allFlavors[Math.floor(Math.random()*allFlavors.length)]);
   }
   return randomFlavors;
